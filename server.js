@@ -10,7 +10,7 @@ app.use(cors({
 app.use(express.json());
 
 const listId = '<your-list-id>';
-const apiKey = '<your-api-key>';
+const apiToken = '<your-api-token>';
 
 app.get('/getTasks', function (req, res) {
   const query = new URLSearchParams({
@@ -27,7 +27,7 @@ app.get('/getTasks', function (req, res) {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: apiKey,
+        Authorization: apiToken,
       },
     },
   )
@@ -46,7 +46,7 @@ app.post('/addTask', function (req, res) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: apiKey,
+        Authorization: apiToken,
       },
       body: JSON.stringify({
         name: req.body.name,
@@ -71,7 +71,7 @@ app.put('/update', function (req, res) {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: apiKey,
+        Authorization: apiToken,
       },
       body: JSON.stringify({
         name: req.body.name,
@@ -96,7 +96,7 @@ app.delete('/deleteTask', function (req, res) {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: apiKey,
+        Authorization: apiToken,
       },
     },
   )
