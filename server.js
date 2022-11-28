@@ -59,7 +59,7 @@ app.post('/addTask', function (req, res) {
     .catch((err) => console.log(err));
 });
 
-app.put('/update', function (req, res) {
+app.put('/updateTask', function (req, res) {
   const query = new URLSearchParams({
     custom_task_ids: 'false',
   }).toString();

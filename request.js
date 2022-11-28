@@ -38,8 +38,7 @@ async function sendRequest(event, address, requestMethod) {
 
 async function updateClickUp(event) {
   if (event.action === 'update' && ('name' in event.changes || 'status' in event.changes)) {
-    console.log(event.action === 'update' && ('name' in event.changes || 'status' in event.changes));
-    sendRequest(event, 'update', 'PUT');
+    sendRequest(event, 'updateTask', 'PUT');
   } else if (event.action === 'add' && event.records.length === 1) {
     sendRequest(event, 'addTask', 'POST');
   } else if (event.action === 'remove' && event.records.length === 1) {
